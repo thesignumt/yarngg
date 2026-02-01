@@ -11,9 +11,7 @@ class Game:
         pygame.init()
         info = pygame.display.Info()
         w, h = info.current_w, info.current_h
-        self.screen = pygame.display.set_mode(
-            (w, h), pygame.FULLSCREEN | pygame.HWSURFACE | pygame.DOUBLEBUF
-        )
+        self.screen = pygame.display.set_mode((w, h), pygame.NOFRAME)
         self.clock = pygame.time.Clock()
 
     def handle_events(self):
