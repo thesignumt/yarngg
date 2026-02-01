@@ -12,6 +12,7 @@ class Game:
         info = pygame.display.Info()
         w, h = info.current_w, info.current_h
         self.screen = pygame.display.set_mode((w, h), pygame.NOFRAME)
+        pygame.display.set_caption(cfg.WINDOW_TITLE)
         self.clock = pygame.time.Clock()
 
     def handle_events(self):
