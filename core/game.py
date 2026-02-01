@@ -1,7 +1,7 @@
 import pygame
 from . import cfg
 
-from ..utils import pygame_utils as pu
+# from .utils import pygame_utils as pu
 
 
 class Game:
@@ -18,7 +18,10 @@ class Game:
 
     def handle_events(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            should_quit = event.type == pygame.QUIT or (
+                event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
+            )
+            if should_quit:
                 self.running = False
 
     def update(self):
